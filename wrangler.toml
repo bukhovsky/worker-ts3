@@ -1,0 +1,7 @@
+name = "worker-ts3"
+main = "src/index.ts"
+compatibility_date = "2023-04-01"
+
+kv_namespaces = [
+  { binding = "MY_KV_NAMESPACE", id = "253663604e1c4616a621f9d9db275452", preview_id = "51fc40a2f7324c44a1ef6272ee44f5c0" }
+]
