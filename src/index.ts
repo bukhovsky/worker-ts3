@@ -30,6 +30,18 @@ router.get('/001', async (req, env) => {
 	return new Response(stringvalue)
  })
 
+ router.post('/post',async (req, env) => {
+	const body = await req.json()
+	const message = `Hello, ${body.name}!`;
+	const bodyString = JSON.stringify(body);
+	await env.MY_KV_NAMESPACE.put("679", bodyString);
+
+	// Return a JSON response
+	return new Response(JSON.stringify({ message }), {
+	  headers: { 'Content-Type': 'application/json' },
+	});
+ })
+
  router.all('*', () => new Response('Not Found.', { status: 404 }))
 
 export default {
